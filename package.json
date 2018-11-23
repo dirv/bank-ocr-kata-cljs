@@ -1,7 +1,6 @@
 {
   "dependencies": {},
   "devDependencies": {
-    "express": "^4.16.4",
     "jsdom": "^13.0.0"
   }
 }
