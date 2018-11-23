@@ -50,9 +50,8 @@
   (map #(apply str %) (partition n s)))
 
 (defn read-many [s]
-  (let [[top middle bottom] (clojure.string/split s #"\n")
-        top-chs (partition-strs 3 top)
-        middle-chs (partition-strs 3 middle)
-        bottom-chs (partition-strs 3 bottom)
-        character-strings (map #(str %1 %2 %3) top-chs middle-chs bottom-chs)]
-    (apply str (map read-single-character character-strings))))
+  (->> (clojure.string/split s #"\n")
+       (map #(partition-strs 3 %))
+       (apply map #(str %1 %2 %3))
+       (map read-single-character)
+       (apply str)))
