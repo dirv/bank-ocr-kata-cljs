@@ -8,5 +8,5 @@
    ])
 
 (defn read-single-character [s]
-  (when (= (nth characters 0))
+  (when (= s (nth characters 0))
     0))
